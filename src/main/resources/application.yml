@@ -10,6 +10,14 @@ netty:
     allocator:
       max-order: 3
 
+tracing:
+  zipkin:
+    http:
+      url: http://host.docker.internal:9411
+    enabled: true
+    sampler:
+      probability: 1
+
 hello:
   world:
     message: "Hello message!"

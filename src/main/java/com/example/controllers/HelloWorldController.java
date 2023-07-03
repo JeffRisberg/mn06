@@ -5,6 +5,7 @@ import io.micronaut.context.annotation.Property;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.*;
+import io.micronaut.tracing.annotation.NewSpan;
 import jakarta.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,12 +27,14 @@ public class HelloWorldController {
     this.goodbyeFromConfig = goodbyeFromConfig;
   }
 
+  @NewSpan
   @Get(uri = "/hello", produces = MediaType.TEXT_PLAIN)
   public String helloWorld() {
     LOG.info("helloWorld is running");
     return helloWorldService.helloFromService();
   }
 
+  @NewSpan
   @Get(uri = "/goodbye", produces = MediaType.TEXT_PLAIN)
   public String goodbyeWorld() {
     LOG.info("goodbyeWorld is running");

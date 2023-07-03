@@ -18,7 +18,11 @@ dependencies {
     implementation("io.micronaut.reactor:micronaut-reactor")
     implementation("io.micronaut.reactor:micronaut-reactor-http-client")
     implementation("jakarta.annotation:jakarta.annotation-api")
-    runtimeOnly("org.slf4j:slf4j-simple")
+    implementation("net.logstash.logback:logstash-logback-encoder:6.3")
+    implementation("io.micronaut:micronaut-tracing")
+    implementation("io.zipkin.brave:brave-instrumentation-http:5.12.3")
+    implementation("io.zipkin.reporter2:zipkin-reporter:2.15.0")
+    implementation("io.opentracing.brave:brave-opentracing:0.37.2")
 }
 
 application {
