@@ -35,6 +35,6 @@
 ## Sample URLs
 
 curl http://localhost:8080/hello
-curl http://localhost:8080/hello
+curl http://localhost:8080/goodbye
 
 
